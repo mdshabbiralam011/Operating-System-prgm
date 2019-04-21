@@ -39,3 +39,16 @@ class FirstFist{
 	}
 }
 // https://ide.geeksforgeeks.org/QlSdAdWpZX
+/*
+output
+process No.		 process size 		 block no
+ 1   			212  			2
+
+ 2   			417  			5
+
+ 3   			112  			2
+
+ 4   			426  			Not Allocated
+
+*/
+
