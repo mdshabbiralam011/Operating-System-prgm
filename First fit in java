@@ -1,0 +1,40 @@
+
+
+import java.io.*;
+import java.util.*;
+
+class FirstFist{
+	public static void main (String[] args) {
+		int[] block_size = {100,500,200,300,600};
+		int[] pr_size = {212,417,112,426};
+		int m=block_size.length;
+		int n=pr_size.length;
+		First_fit(block_size,m,pr_size,n);
+	}
+	static void First_fit(int[] block_size,int m,int[] pr_size,int n){
+	    int[] allocation = new int[n];
+	    for(int i=0;i<allocation.length;i++){
+	        allocation[i]=-1;
+	    }
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<m;j++){
+	            if(block_size[j]>=pr_size[i]){
+	                allocation[i]=j;
+	                block_size[j]-=pr_size[i];
+	                break;
+	            }
+	        }
+	    }
+	    System.out.println("\nprocess No.\t\t process size \t\t block no");
+	    for(int j=0;j<n;j++){
+	        System.out.print(" "+(j+1)+"\t\t\t"+pr_size[j]+"\t\t\t");
+	        if(allocation[j]!=-1){
+	            System.out.println(allocation[j]+1);
+	        }
+	        else{
+	            System.out.println("Not Allocated");
+	        }
+	        System.out.println();
+	    }
+	}
+}
